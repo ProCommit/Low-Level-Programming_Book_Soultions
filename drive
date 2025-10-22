@@ -1,52 +1,183 @@
+; === colon.inc ===
 %macro colon 2
 %2:
-    dq last_word          
-    %undef last_word         
-    %xdefine last_word %2    
-    db %1, 0              
+    dq last_word            ; מצביע לרשומה הקודמת
+    %undef last_word
+    %xdefine last_word %2   ; עדכון הסמל לרשומה הנוכחית
+    db %1, 0                ; key string
 %endmacro
 
 
+; === words.inc ===
 %include "colon.inc"
 
 section .data
 last_word equ 0
 
 colon "third word", third_word
-db "third explanation", 0
+db "third word explanation", 0
 
 colon "second word", second_word
-db "second explanation", 0
+db "second word explanation", 0
 
 colon "first word", first_word
-db "first explanation", 0
+db "first word explanation", 0
 
 
+; === lib.asm ===
+; פונקציות עזר בסיסיות: print, read, strcmp
+
+section .text
+global print, read_input, strcmp, exit
+
+; print(rdi = כתובת מחרוזת)
+print:
+    push rdi
+    mov rsi, rdi
+    mov rdx, 0
+.count:
+    cmp byte [rsi + rdx], 0
+    je .write
+    inc rdx
+    jmp .count
+.write:
+    mov rax, 1              ; syscall: write
+    mov rdi, 1              ; stdout
+    syscall
+    pop rdi
+    ret
+
+; read_input(rdi = buffer, rsi = max_len)
+read_input:
+    mov rax, 0              ; syscall: read
+    mov rdi, 0              ; stdin
+    syscall
+    ret
+
+; strcmp(rdi=str1, rsi=str2)
+strcmp:
+    xor rcx, rcx
+.loop:
+    mov al, [rdi + rcx]
+    mov dl, [rsi + rcx]
+    cmp al, dl
+    jne .diff
+    cmp al, 0
+    je .equal
+    inc rcx
+    jmp .loop
+.diff:
+    mov rax, 1
+    ret
+.equal:
+    xor rax, rax
+    ret
+
+; exit()
+exit:
+    mov rax, 60
+    xor rdi, rdi
+    syscall
+
+
+
+; === dict.asm ===
+section .text
+global find_word
+extern strcmp
 
 find_word:
 .loop:
-    test rsi, rsi            
-    jz .not_found
+    test rsi, rsi
+    jz .not_found           
 
-    lea rdx, [rsi + 8]          
-
-    ; strcmp(rdi, rdx)
-    push rsi                   
+    push rsi
+    lea rdx, [rsi + 8]     
     mov rsi, rdx
-    call strcmp
+    call strcmp             
     pop rsi
 
     test rax, rax
-    jnz .next              
+    jz .found               
 
-
-    mov rax, rsi               
-    ret
-
-.next:
-    mov rsi, [rsi]            
+    mov rsi, [rsi]          
     jmp .loop
 
 .not_found:
-    xor rax, rax            
+    xor rax, rax
     ret
+
+.found:
+    mov rax, rsi
+    ret
+
+
+
+
+; === main.asm ===
+%include "words.inc"
+
+section .data
+prompt_msg db "Enter key: ", 0
+not_found_msg db "Key not found!", 10, 0
+buffer times 256 db 0
+
+section .text
+global _start
+extern find_word, print, read_input, exit
+
+_start:
+    mov rdi, prompt_msg
+    call print
+
+    mov rdi, buffer
+    mov rsi, 255
+    call read_input
+
+
+    mov rcx, buffer
+.remove_nl:
+    cmp byte [rcx], 0
+    je .done_clean
+    cmp byte [rcx], 10
+    jne .next
+    mov byte [rcx], 0
+    jmp .done_clean
+.next:
+    inc rcx
+    jmp .remove_nl
+.done_clean:
+
+
+    mov rdi, buffer
+    mov rsi, last_word
+    call find_word
+    test rax, rax
+    jz .not_found
+
+
+    lea rbx, [rax + 8]
+.skip_key:
+    cmp byte [rbx], 0
+    je .value_start
+    inc rbx
+    jmp .skip_key
+.value_start:
+    inc rbx
+    mov rdi, rbx
+    call print
+    call exit
+
+.not_found:
+    mov rdi, not_found_msg
+    call print
+    call exit
+
+
+nasm -f elf64 lib.asm -o lib.o
+nasm -f elf64 dict.asm -o dict.o
+nasm -f elf64 main.asm -o main.o
+ld main.o lib.o dict.o -o main
+./main
+
+
