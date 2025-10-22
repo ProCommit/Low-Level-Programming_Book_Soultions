@@ -20,3 +20,33 @@ db "second explanation", 0
 
 colon "first word", first_word
 db "first explanation", 0
+
+
+
+find_word:
+.loop:
+    test rsi, rsi            
+    jz .not_found
+
+    lea rdx, [rsi + 8]          
+
+    ; strcmp(rdi, rdx)
+    push rsi                   
+    mov rsi, rdx
+    call strcmp
+    pop rsi
+
+    test rax, rax
+    jnz .next              
+
+
+    mov rax, rsi               
+    ret
+
+.next:
+    mov rsi, [rsi]            
+    jmp .loop
+
+.not_found:
+    xor rax, rax            
+    ret
