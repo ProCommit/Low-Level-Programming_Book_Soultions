@@ -1,0 +1,22 @@
+%macro colon 2
+%2:
+    dq last_word          
+    %undef last_word         
+    %xdefine last_word %2    
+    db %1, 0              
+%endmacro
+
+
+%include "colon.inc"
+
+section .data
+last_word equ 0
+
+colon "third word", third_word
+db "third explanation", 0
+
+colon "second word", second_word
+db "second explanation", 0
+
+colon "first word", first_word
+db "first explanation", 0
