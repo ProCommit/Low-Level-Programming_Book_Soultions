@@ -1,1 +1,2 @@
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
+gsettings get org.gnome.shell.keybindings switch-to-application-1
