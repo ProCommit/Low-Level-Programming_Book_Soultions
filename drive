@@ -213,11 +213,13 @@ highlight CocFloatSbar guibg=#1e2030
 
 
 
-" תפריט ההשלמה הרגיל
+" ====== COC completion popup styling (dark clean look) ======
+
+" רקע התפריט הכללי – שחור כהה
 highlight Pmenu guibg=#101010 guifg=#c0caf5
 
-" בחירה — שחור בהיר מודגש
+" השורה שנבחרת – שחור בהיר מאוד
 highlight PmenuSel guibg=#2a2a2a guifg=#ffffff gui=bold
 
-" מסגרת עדינה
+" מסגרת דקה
 highlight PmenuBorder guifg=#3b4261
