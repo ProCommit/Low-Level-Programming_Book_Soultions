@@ -235,3 +235,12 @@ highlight! PmenuSel guibg=#4a4a4a guifg=#ffffff gui=bold
 
 
 
+background_opacity 0.85
+window_padding_width 6
+border_width 1
+active_border_color #7aa2f7
+inactive_border_color #44475a
+font_family JetBrainsMono Nerd Font
+font_size 14.0
+
+
