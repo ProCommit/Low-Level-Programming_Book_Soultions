@@ -213,6 +213,12 @@ highlight CocFloatSbar guibg=#1e2030
 
 
 
+" צבע לבחירה (שורה פעילה)
+highlight PmenuSel guibg=#394b70 guifg=#ffffff gui=bold
+" מסגרת עדינה
+highlight PmenuBorder guifg=#3b4261
 
-
-
+ "suggest.floatEnable": false,
+  "suggest.enablePreview": true,
+  "suggest.acceptOnEnter": "both",
+  "suggest.noselect": fals
