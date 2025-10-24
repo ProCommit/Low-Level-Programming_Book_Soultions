@@ -56,3 +56,125 @@ sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
   }
 }
 
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+" ====== Plugins ======
+call plug#begin('~/.vim/plugged')
+
+" השלמות חכמות
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
+" ====== General Settings ======
+set nocompatible
+set number
+syntax on
+filetype plugin indent on
+
+" ====== Auto completion behavior ======
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+
+" ====== Colors ======
+colorscheme desert
+
+" ====== Coc.nvim Settings ======
+" Ctrl + Space לפתיחת השלמות
+inoremap <silent><expr> <C-Space> coc#refresh()
+
+" נווט בין הצעות עם Tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" קפיצה להגדרה
+nmap <silent> gd <Plug>(coc-definition)
+
+" תיעוד (hover)
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
+
+
+
+
+
+
+
+"languageserver": {
+  "clangd": {
+    "command": "clangd",
+    "filetypes": ["c", "cpp", "objc", "objcpp"]
+  }
+},"asm-lsp": {
+      "command": "asm-lsp",
+      "filetypes": ["asm", "s", "S"]
+    }
+  }
+}
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+" ====== Plugins ======
+call plug#begin('~/.vim/plugged')
+
+" השלמות חכמות
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
+" ====== General Settings ======
+set nocompatible
+set number
+syntax on
+filetype plugin indent on
+
+" ====== Auto completion behavior ======
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+
+" ====== Colors ======
+colorscheme desert
+
+" ====== Coc.nvim Settings ======
+" Ctrl + Space לפתיחת השלמות
+inoremap <silent><expr> <C-Space> coc#refresh()
+
+" נווט בין הצעות עם Tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" קפיצה להגדרה
+nmap <silent> gd <Plug>(coc-definition)
+
+" תיעוד (hover)
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
+
+
+
+
+
+
+
+"languageserver": {
+  "clangd": {
+    "command": "clangd",
+    "filetypes": ["c", "cpp", "objc", "objcpp"]
+  }
+},"asm-lsp": {
+      "command": "asm-lsp",
+      "filetypes": ["asm", "s", "S"]
+    }
+  }
+}
+{
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.acceptOnEnter": "both"
+}
+
+
