@@ -180,23 +180,32 @@ inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 
 
 
-" ======== COC COLOR TWEAKS ========
+" ========= COC COLOR FIX (Dark / Space Style) =========
 
-" צבע רקע של תיבת ההשלמה
-highlight Pmenu guibg=#1a1b26 guifg=#c0caf5
+" תפריט השלמה (רקע כהה, טקסט בהיר)
+highlight Pmenu guibg=#0d1117 guifg=#c8d3f5
 
-" צבע בחירה בתוך ההשלמה
-highlight PmenuSel guibg=#33467C guifg=#ffffff gui=bold
+" פריט שנבחר בתפריט
+highlight PmenuSel guibg=#2d3f76 guifg=#ffffff gui=bold
 
-" צבע מסגרת (אם אתה רוצה גבול קל)
-highlight PmenuBorder guifg=#565f89
+" גבולות התפריט (לניגודיות קלה)
+highlight PmenuBorder guifg=#3b4261
 
-" הדגשת פריטים שנבחרו מתוך Coc
-highlight CocMenuSel guibg=#3b4261 guifg=#ffffff
+" טקסט של תיעוד (Hover)
+highlight CocFloating guibg=#0f1424 guifg=#c8d3f5
 
-" צבעים לטקסטים של שגיאות/אזהרות
+" קווים מתחת לשגיאות / אזהרות
+highlight CocUnderline gui=undercurl guisp=#f7768e
+
+" סימנים בצד שמאל
 highlight CocErrorSign guifg=#f7768e
 highlight CocWarningSign guifg=#e0af68
 highlight CocInfoSign guifg=#7aa2f7
 highlight CocHintSign guifg=#9ece6a
 
+" הודעות פופ-אפ אחרות של CoC
+highlight CocMenuSel guibg=#394b70 guifg=#ffffff
+highlight CocPumVirtualText guifg=#7aa2f7
+highlight CocSearch guifg=#9ece6a gui=bold
+highlight CocFloatThumb guibg=#394b70
+highlight CocFloatSbar guibg=#1e2030
