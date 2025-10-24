@@ -160,21 +160,19 @@ sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
 
 
 
-"languageserver": {
-  "clangd": {
-    "command": "clangd",
-    "filetypes": ["c", "cpp", "objc", "objcpp"]
-  }
-},"asm-lsp": {
+{
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.acceptOnEnter": "both",
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cpp"]
+    },
+    "asm-lsp": {
       "command": "asm-lsp",
       "filetypes": ["asm", "s", "S"]
     }
   }
 }
-{
-  "suggest.noselect": false,
-  "suggest.enablePreview": true,
-  "suggest.acceptOnEnter": "both"
-}
-
 
