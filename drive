@@ -186,7 +186,8 @@ inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 highlight Pmenu guibg=#0d1117 guifg=#c8d3f5
 
 " פריט שנבחר בתפריט
-highlight PmenuSel guibg=#3b4261 guifg=#ffffff gui=bold
+highlight CocMenuSel guibg=#3b4261 guifg=#ffffff gui=bold
+highlight CocPumSel guibg=#3b4261 guifg=#ffffff gui=bold
 
 " גבולות התפריט (לניגודיות קלה)
 highlight PmenuBorder guifg=#3b4261
