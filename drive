@@ -177,3 +177,26 @@ sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
 }
 " גורם ל־Enter לבחור הצעה כשיש השלמה פתוחה
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+
+
+
+" ======== COC COLOR TWEAKS ========
+
+" צבע רקע של תיבת ההשלמה
+highlight Pmenu guibg=#1a1b26 guifg=#c0caf5
+
+" צבע בחירה בתוך ההשלמה
+highlight PmenuSel guibg=#33467C guifg=#ffffff gui=bold
+
+" צבע מסגרת (אם אתה רוצה גבול קל)
+highlight PmenuBorder guifg=#565f89
+
+" הדגשת פריטים שנבחרו מתוך Coc
+highlight CocMenuSel guibg=#3b4261 guifg=#ffffff
+
+" צבעים לטקסטים של שגיאות/אזהרות
+highlight CocErrorSign guifg=#f7768e
+highlight CocWarningSign guifg=#e0af68
+highlight CocInfoSign guifg=#7aa2f7
+highlight CocHintSign guifg=#9ece6a
+
