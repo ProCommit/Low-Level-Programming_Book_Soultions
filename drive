@@ -213,9 +213,12 @@ highlight CocFloatSbar guibg=#1e2030
 
 
 
-" ====== Floating window colors (CoC uses these) ======
-highlight NormalFloat guibg=#202020 guifg=#ffffff
-highlight FloatBorder guifg=#3b4261 guibg=#202020
-highlight Pmenu guibg=#101010 guifg=#c0caf5
-highlight PmenuSel guibg=#5a5a5a guifg=#ffffff gui=bold
+" ====== Floating popup colors (CoC / completion) ======
+highlight NormalFloat guibg=#0f0f0f guifg=#c0caf5
+highlight FloatBorder guifg=#3b4261 guibg=#0f0f0f
+highlight CocPum guibg=#0f0f0f guifg=#c0caf5
+highlight CocPumSel guibg=#555555 guifg=#ffffff gui=bold
+highlight Pmenu guibg=#0f0f0f guifg=#c0caf5
+highlight PmenuSel guibg=#555555 guifg=#ffffff gui=bold
+
 
