@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# fix-gnome-stutter.sh
+# מאיץ את GNOME, מנקה הרחבות תקועות ומבטל אנימציות
+
+echo "🚀 מנקה הרחבות פעילות..."
+for e in $(gnome-extensions list --enabled); do
+    gnome-extensions disable "$e"
+done
+
+echo "⚙️ מאפס הגדרות Mutter ו־GNOME..."
+gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.mutter experimental-features "[]"
+gsettings set org.gnome.mutter dynamic-workspaces false
+
+# ביטול overview בלחיצה על Super
+echo "🧱 מבטל Overview בלחיצה על Super..."
+gsettings set org.gnome.shell.keybindings toggle-overview "[]"
+
+# קובע workspaces קבועים
+echo "🧩 קובע 6 שולחנות עבודה קבועים..."
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
+
+# מאפס caches
+echo "🧹 מנקה cache של GNOME..."
+rm -rf ~/.cache/gnome-shell/*
+rm -rf ~/.cache/fontconfig
+fc-cache -f -v
+
+# האצת gnome-shell
+echo "⚡ מעלה עדיפות של gnome-shell..."
+sudo renice -n -10 -p $(pgrep gnome-shell) >/dev/null 2>&1
+
+# ניקוי GPU/Mutter ניסיוניים
+echo "🔧 מוודא שה־scale-monitor-framebuffer פעיל..."
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+echo "✅ בוצע! הפעל מחדש את GNOME (Alt+F2 → r → Enter) או התנתק/התחבר מחדש."
