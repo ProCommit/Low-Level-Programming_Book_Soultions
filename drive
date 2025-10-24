@@ -242,5 +242,8 @@ active_border_color #7aa2f7
 inactive_border_color #44475a
 font_family JetBrainsMono Nerd Font
 font_size 14.0
+hide_window_decorations yes
+
+gsettings set org.gnome.desktop.wm.preferences action-middle-click-titlebar 'move'
 
 
