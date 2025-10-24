@@ -222,14 +222,16 @@ highlight Pmenu guibg=#0f0f0f guifg=#c0caf5
 highlight PmenuSel guibg=#555555 guifg=#ffffff gui=bold
 
 
-" ====== Force floating window color override ======
+" ====== Force floating popup colors (dark clean look) ======
 set termguicolors
+
 highlight! link NormalFloat Normal
-highlight NormalFloat guibg=#0f0f0f guifg=#c0caf5
-highlight FloatBorder guifg=#3b4261 guibg=#0f0f0f
-highlight! CocPum guibg=#0f0f0f guifg=#c0caf5
-highlight! CocPumSel guibg=#555555 guifg=#ffffff gui=bold
-highlight! Pmenu guibg=#0f0f0f guifg=#c0caf5
-highlight! PmenuSel guibg=#555555 guifg=#ffffff gui=bold
+highlight! NormalFloat guibg=#1e1e1e guifg=#c0caf5
+highlight! FloatBorder guifg=#3b4261 guibg=#1e1e1e
+highlight! CocPum guibg=#1e1e1e guifg=#c0caf5
+highlight! CocPumSel guibg=#4a4a4a guifg=#ffffff gui=bold
+highlight! Pmenu guibg=#1e1e1e guifg=#c0caf5
+highlight! PmenuSel guibg=#4a4a4a guifg=#ffffff gui=bold
+
 
 
