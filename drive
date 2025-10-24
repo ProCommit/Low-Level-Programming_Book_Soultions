@@ -213,12 +213,19 @@ highlight CocFloatSbar guibg=#1e2030
 
 
 
-" צבע לבחירה (שורה פעילה)
-highlight PmenuSel guibg=#394b70 guifg=#ffffff gui=bold
-" מסגרת עדינה
-highlight PmenuBorder guifg=#3b4261
+" ======== CoC.nvim popup colors fix (modern PUM) ========
 
- "suggest.floatEnable": false,
-  "suggest.enablePreview": true,
-  "suggest.acceptOnEnter": "both",
-  "suggest.noselect": fals
+" צבע רקע לתפריט עצמו
+highlight CocPum guibg=#0d1117 guifg=#c0caf5
+
+" צבע ברור לפריט המסומן בתפריט
+highlight CocPumSel guibg=#394b70 guifg=#ffffff gui=bold
+
+" צבע מסגרת סביב התפריט (לא חובה)
+highlight CocPumBorder guifg=#3b4261
+
+" צבע של טקסט חיפוש (אם יש)
+highlight CocPumSearch guifg=#9ece6a gui=bold
+
+" צבע לרקע של ה־hover window
+highlight CocFloating guibg=#0f1424 guifg=#c0caf5
