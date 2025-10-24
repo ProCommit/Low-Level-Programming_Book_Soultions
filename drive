@@ -209,3 +209,27 @@ highlight CocPumVirtualText guifg=#7aa2f7
 highlight CocSearch guifg=#9ece6a gui=bold
 highlight CocFloatThumb guibg=#394b70
 highlight CocFloatSbar guibg=#1e2030
+
+
+
+
+" ======== COC VISIBLE SELECTION FIX ========
+
+" תפריט ההשלמה עצמו (נשאר כהה)
+highlight Pmenu guibg=NONE guifg=#c0caf5
+
+" פריט שנבחר – כחול זוהר עם ניגודיות גבוהה
+highlight PmenuSel guibg=#005f87 guifg=#ffffff gui=bold
+
+" מסגרת עדינה לתפריט
+highlight PmenuBorder guifg=#3b4261
+
+" הדגשת שורה נבחרת בתוך CoC
+highlight CocMenuSel guibg=#005f87 guifg=#ffffff gui=bold
+
+" סימני שגיאה/אזהרה נשארים קריאים
+highlight CocErrorSign guifg=#f7768e
+highlight CocWarningSign guifg=#e0af68
+highlight CocInfoSign guifg=#7aa2f7
+highlight CocHintSign guifg=#9ece6a
+
