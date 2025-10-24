@@ -36,5 +36,4 @@ nmap <silent> gd <Plug>(coc-definition)
 
 " תיעוד (hover)
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
-
-
+sudo dnf install gcc gcc-c++ make cmake pkg-config openssl-devel -y
