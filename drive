@@ -213,13 +213,17 @@ highlight CocFloatSbar guibg=#1e2030
 
 
 
-" ====== COC completion popup styling (dark clean look) ======
+" ====== CoC Floating Popup Styling (dark clean look) ======
 
-" רקע התפריט הכללי – שחור כהה
-highlight Pmenu guibg=#101010 guifg=#c0caf5
+" רקע כללי של תפריט ההשלמה
+highlight CocPum guibg=#101010 guifg=#c0caf5
 
-" השורה שנבחרת – שחור בהיר מאוד
-highlight PmenuSel guibg=#2a2a2a guifg=#ffffff gui=bold
+" השורה שנבחרה (הבחירה שלך)
+highlight CocPumSel guibg=#2a2a2a guifg=#ffffff gui=bold
 
-" מסגרת דקה
-highlight PmenuBorder guifg=#3b4261
+" רקע החלון הצף (hover docs, etc)
+highlight CocFloating guibg=#101010 guifg=#c0caf5
+
+" רקע המסגרת
+highlight CocBorder guifg=#3b4261
+
