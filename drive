@@ -222,3 +222,14 @@ highlight Pmenu guibg=#0f0f0f guifg=#c0caf5
 highlight PmenuSel guibg=#555555 guifg=#ffffff gui=bold
 
 
+" ====== Force floating window color override ======
+set termguicolors
+highlight! link NormalFloat Normal
+highlight NormalFloat guibg=#0f0f0f guifg=#c0caf5
+highlight FloatBorder guifg=#3b4261 guibg=#0f0f0f
+highlight! CocPum guibg=#0f0f0f guifg=#c0caf5
+highlight! CocPumSel guibg=#555555 guifg=#ffffff gui=bold
+highlight! Pmenu guibg=#0f0f0f guifg=#c0caf5
+highlight! PmenuSel guibg=#555555 guifg=#ffffff gui=bold
+
+
