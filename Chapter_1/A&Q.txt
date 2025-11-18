@@ -1,0 +1,20 @@
+■ Question 1 It is time to do preliminary research based on the documentation [15]. Refer to section 3.4.3
+of the first volume to learn about register rflags. What is the meaning of flags CF, AF, ZF, OF, SF? What is the
+difference between OF and CF?
+CF - carry flag set when arimatc action make carry bit in the msb, indicate of unsinged overflow
+AF - Indicates a carry or borrow between the lower nibbl
+SF - sign bit lag set if the MSB of the result is 1 indecat on negative number in tow complment
+OF - set if arimtc action of two values with the same MSB give results with different MSB, indect on signed overflow
+ZF - zero flag set is thr result of arimatic action is 0
+the difference between OF and CF is the OF use the indecat overflow on signed values and CF on unsigned valuse  
+
+■ Question 2 What are the key principles of von Neumann architecture? one memory for data and code,one share bus, reade instraction one after one (fach -> decode -> execute) 
+■ Question 3 What are registers? small and fast storage inside the cpu 
+■ Question 4 What is the hardware stack? the hardware stack is the hardware soppurt on the stack data structure like in x86_x64 - instcrtion push pop ret call,registers rsp rbp 
+■ Question 5 What are the interrupts? event that the cpu need to handle them like I/O,syscall/dvi 0
+■ Question 6  What are the main problems that the modern extensions of the von Neumann model are trying
+to solve? multitasking, preformnce, intrctivity,code support like functions 
+■ Question 7 What are the main general purpose registers of Intel 64? rax,rbx,rcx,rdx,rsi,rd,rbp,rsp,r8-r15
+■ Question 8 What is the purpose of the stack pointer? to pointg on the top of the stack
+■ Question 9 Can the stack be empty? yes
+■ Question 10 Can we count elements in a stack? no
