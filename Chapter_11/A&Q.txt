@@ -1,0 +1,17 @@
+■ Question 215 In languages such as C#, code like the following is possible:
+var count = 0;
+mylist.Foreach( x => count += 1 );
+here we launch an anonymous function (i.e., a function which has no name, but whose address can be
+manipulated, for example, passed to other function) for each element of a list. The function is written as x =>
+count += 1 and is the equivalent of
+void no_name( int x ) { count += 1; }
+The interesting thing about it is that this function is aware of some of the local variables of the caller and thus
+can modify them.
+Can you rewrite the function forall so that it accepts a pointer to a “context” of sorts, which can hold an
+arbitrary number of variables addresses and then pass the context to the function called for each element?
+
+
+int count = 0;
+forall(struct list *lst,(*fun)(int,void*),void *contect)
+
+
