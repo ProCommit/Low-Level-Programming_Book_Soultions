@@ -15,3 +15,32 @@ int count = 0;
 forall(struct list *lst,(*fun)(int,void*),void *contect)
 
 
+■ Question 216 What arithmetic operations can you perform with pointers, and on what conditions? + - != == -- ++
+■ Question 217 What is the purpose of void*? generic pointer
+■ Question 218 What is the purpose of NULL? do define unveiled pointer 
+■ Question 219 What is the difference between 0 in pointer context and 0 as an integer value? ptr 0 its ptr that point on nothing(invalid ptr) int 0 is the reprinting 0 
+ 
+■ Question 220 What is ptrdiff_t and how is it used? use to hold the subtraction results from subrction or tow pointers
+■ Question 221 What is the difference between size_t and ptrdiff_t? sise_t is unsined type and ptrdiff_t is signed
+■ Question 222 What are first-class objects? refer to any entity that can be trath like any other value in the language 
+
+■ Question 223 Are functions first-class objects in C? no
+
+■ Question 224 What data regions does the C abstract machine contain? data text rodata stack heap  
+■ Question 225 Is the constant data region usually write-protected by hardware? yes
+■ Question 226 What is the connection between pointers and arrays? array implament in c by cosist pointers that majer by size and the array addrase is the addrase of the first elemant of the array
+■ Question 227 What is the dynamic memory allocation? a block of memory that not alocat in the completion he alocate in the run time
+■ Question 228 What is the sizeof operator? When is it computed? the zsize of bytes of object
+
+
+■ Question 229 When are the string literals stored in .rodata? constant strring like "hello"
+■ Question 230 What is ■ Question 230 What is string interning? macnizem that make sure that constant string do not save in memory multiple times only ones
+■ Question 231 Which data model are we using? lp64 in c that data modle relai on os
+■ Question 232 Which header contains platform-independent types? <stdint.h>
+■ Question 233 How do we concatenate string literals in compile time?String literals can be concatenated at compile-time by placing them adjacent to each other in the source code.
+■ Question 234 What is the data stream? a continuous flow of data, often generated at high volume and speed, that is processed in real-time as it arrives
+■ Question 235 Is there a difference between a data stream and a descriptor? yes data stream if flow of data descriptor in nmber of the flie in system 
+■ Question 236 How do we get the descriptor from stream?   fileno(stream)
+■ Question 237 Are there any streams opened when the program starts? yes stdin stdout stderr
+■ Question 238 What is the difference between binary and text streams? binary sterm is continuis bits that we can intrpetd as we wand txt strme use in inrptet as text
+■ Question 239 How do we open a binary stream? A text stream? fopen(filename,"rb")  fopen(filename,"r")
